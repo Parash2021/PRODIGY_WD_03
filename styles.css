@@ -1,0 +1,112 @@
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right bottom, #4caf50, #45a049);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* Container styles */
+.container {
+    max-width: 90%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Game options styles */
+.game-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Mode button styles */
+.btn-mode {
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-mode:hover {
+    background-color: #45a049;
+}
+
+.btn-mode.active {
+    background-color: #45a049;
+}
+
+.btn-mode.active:hover {
+    background-color: #4caf50;
+}
+
+/* Board styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust column size */
+    gap: 10px;
+    margin: 20px auto;
+    width: 100%; /* Ensure board takes full width */
+    max-width: 600px; /* Adjust max-width as needed */
+    aspect-ratio: 1; /* Maintain aspect ratio for a square */
+    background-image: linear-gradient(45deg, #4caf50, #45a049); /* Gradient background */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Optional: Add box shadow */
+}
+
+/* Cell styles */
+.cell {
+    background-color: #ddd; /* Example background color for cells */
+    border: 2px solid #ccc;  /* Border color for all cells */
+    padding: 60px 0;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover {
+    background-color: #c0c0c0;
+    transform: scale(1.05);
+}
+
+.cell.x::before {
+    content: 'X';
+    color: red; /* Red color for X */
+}
+
+.cell.o::before {
+    content: 'O';
+    color: blue; /* Blue color for O */
+    border: none;  /* Ensure no border is added */
+}
+
+/* Remove any focus or active styles that might be affecting the cells */
+.cell:focus,
+.cell:active {
+    outline: none;
+    border: none;
+}
